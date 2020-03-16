@@ -29,6 +29,7 @@ const Overview = props => {
     <FlexContainer direction="column" flex={5}>
       <h1>Corona Virus Stats in {currentCountry.name}</h1>
       <h2>Last update: {currentCountry.lastUpdate}</h2>
+      <h3>Datasource: <a href="https://covid19.mathdro.id/api/">https://covid19.mathdro.id/api/</a></h3>
       <StyledOverview>
         <Card>
           <h4>Confirmend Cases</h4>

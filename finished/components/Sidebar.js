@@ -1,21 +1,16 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
 import shortid from 'shortid';
 import { CountryContext } from '@context/CountryContext';
 import StyledButton from '@styled/StyledButton';
+import StyledSidebar from '@styled/StyledSidebar';
 
-const StyledAside = styled.aside`
-  flex: 1;
-  padding: 1em;
-  background: ${props => props.theme.colors.surface};
-  border-right: 1px solid ${props => props.theme.colors.accent};
-`;
+
 
 const Sidebar = () => {
   const { countryData, loading, selectedCountry, selectCountry } = useContext(CountryContext);
 
   return (
-    <StyledAside>
+    <StyledSidebar>
       <h3>Choose a Country</h3>
       <select value={selectedCountry} onChange={e => selectCountry(e.target.value)} disabled={loading}>
         {loading ? (
@@ -33,7 +28,7 @@ const Sidebar = () => {
           Back to Austria
         </StyledButton>
       )}
-    </StyledAside>
+    </StyledSidebar>
   );
 };
 

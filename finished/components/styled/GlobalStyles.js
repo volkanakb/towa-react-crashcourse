@@ -22,7 +22,7 @@ const GlobalStyles = createGlobalStyle`
     height:100%;
     overflow:hidden;
   }
-  h1,h2 {
+  h1,h2,h3,h4 {
     text-align:center;
   }
 `;
