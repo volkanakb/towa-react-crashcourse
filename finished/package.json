@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start -p 8080"
+  },
+  "engines": {
+    "node": ">=12"
   },
   "keywords": [],
   "author": "Daniel Holpfer",
