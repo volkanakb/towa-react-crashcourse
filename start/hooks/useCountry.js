@@ -12,20 +12,21 @@ const useCountry = apiUrl => {
   const [error, setError] = useState(null);
 
   const selectCountry = selectedCountryCode => {
-    setSelectedCountry(selectedCountryCode);
-    if (error) setError(null);
+    // TODO: set the selected Country Code, reset the error variable if an error was set and export this function
   };
 
   useEffect(() => {
     async function fetchData() {
       try {
-        // fetch movies and genres
+        // fetch movies and genres in Promise.all call - this will return an array of both promises resolved
         const [currentCountryResponse, countryListResponse] = await Promise.all([
           axios(`${apiUrl}/${selectedCountry}`),
           axios(apiUrl),
         ]);
 
-        // combine country and iso list
+        // combine country and iso list as https://covid19.mathdro.id/api/countries - returns both formats but the api only listens on the iso Code
+        // countryCode for Austria would be: "AT"
+        // isoCode for Austria would be: "AUT" - https://covid19.mathdro.id/api/countries/AUT
         const countryList = Object.entries(countryListResponse.data.countries).map(([countryName, countryCode]) => {
           const country = { name: countryName, countryCode };
           Object.entries(countryListResponse.data.iso3).forEach(([isoName, isoCode]) => {
@@ -42,6 +43,7 @@ const useCountry = apiUrl => {
         currentCountry.lastUpdate = format(new Date(currentCountry.lastUpdate), 'dd.MM.Y hh:m');
 
         setCountryData({ currentCountry, countryList });
+        //simulates waiting time on the api
         // await wait(2000);
         setLoading(false);
       } catch (error) {

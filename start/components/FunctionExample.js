@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '@styled/Card';
 
+// TODO: add some kind of state and a function to update this state
 const FunctionExample = ({ headline = 'FunctionalComponent has no props' }) => {
   const [date, setDate] = useState(null);
 
