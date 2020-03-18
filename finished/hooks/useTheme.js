@@ -16,7 +16,7 @@ const useTheme = (lightTheme, darkTheme) => {
     };
   }, [lightTheme, darkTheme]);
 
-  const [currentTheme, setCurrentTheme] = useState(light);
+  const [currentTheme, setCurrentTheme] = useState(dark);
 
   const toggleTheme = () => {
     setCurrentTheme(currentTheme.hash === light.hash ? dark : light);
