@@ -12,7 +12,7 @@ const NextApp = ({ Component, pageProps }) => {
   // TODO: make the StyledButton functioning by using our "useTheme" hook
   // TODO: also pass the current theme to our ThemeProvider
   return (
-    <ThemeProvider theme={}>
+    <ThemeProvider theme={lightTheme}>
       <Layout>
         <StyledHeader>
           <Nav />
